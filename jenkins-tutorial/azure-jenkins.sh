@@ -1,5 +1,5 @@
 #!/bin/bash
-export resourceGroup=Elyes-Othmani-PFE01
+export resourceGroup=myResourceGroup$RANDOM
 virtualMachine=myVM
 adminUser=azureuser
 pathToKubeConfig=~/.kube/config
@@ -8,7 +8,7 @@ if [ -f $pathToKubeConfig ]
 then
 
     # Create a resource group.
-    #az group create --name $resourceGroup --location westeurope
+    az group create --name $resourceGroup --location westeurope
 
     # Create a new virtual machine, this creates SSH keys if not present.
     az vm create --resource-group $resourceGroup --name $virtualMachine --admin-username $adminUser --image UbuntuLTS --generate-ssh-keys
