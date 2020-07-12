@@ -37,7 +37,7 @@ pipeline {
 
   
                  }
-        }
+     t   }
       }
       
       stage('Chek env') 
@@ -49,5 +49,5 @@ pipeline {
               }
         }
 
-    }
+    
 }
