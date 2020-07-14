@@ -32,7 +32,7 @@ pipeline {
         {
             steps{
                  script {
-                    docker.withRegistry( 'https://hub.docker.com/repository/docker/elyes97/rfc', registryCredential ) 
+                    docker.withRegistry( '', registryCredential ) 
                      {
             dockerImage.push()
                      }
