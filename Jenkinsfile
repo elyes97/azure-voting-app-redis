@@ -31,7 +31,7 @@ pipeline {
         }
       }
         
-              stage('Pushing  image') 
+      /*        stage('Pushing  image') 
         {
             steps{
                  script {
@@ -42,9 +42,9 @@ pipeline {
   
                  }
        }
-      }
+      }*/
       
-      stage('Chek env') 
+  /*    stage('Chek env') 
         {
             steps 
               {
@@ -65,7 +65,7 @@ pipeline {
                   }
                 
               }
-        }
+        }*/
 
         }
 }
