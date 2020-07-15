@@ -4,7 +4,7 @@ pipeline {
     registry = "elyes97/rfc"
     registryCredential = 'dockerhub'
     dockerImage = ''
-        IMAGE_TAG = dockerImage
+        IMAGE_TAG 
   }
 
     
@@ -24,6 +24,7 @@ pipeline {
             steps{
                  script {
                     dockerImage = docker.build registry + ":TestV$BUILD_NUMBER"
+                     IMAGE_TAG = dockerImage
                     sh'echo $IMAGE_TAG' 
   
                  }
