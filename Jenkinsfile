@@ -36,7 +36,7 @@ pipeline {
         }
       }
         
-             stage('Pushing  image') echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
+             stage('Pushing  image') 
         {
              echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
             steps{
