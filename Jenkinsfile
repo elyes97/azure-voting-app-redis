@@ -30,7 +30,7 @@ pipeline {
         
               stage('Pushing  image') 
         {
-            steps{
+            steps{DYZN3XUZM
                  script {
                     docker.withRegistry( '', registryCredential ) 
                      {
@@ -47,8 +47,8 @@ pipeline {
               {
                sh 'az login '
                sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
-                  sh ' pwd '
-                   sh ' ls'
+                  sh ' cat var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml '
+                
               }
         }
 
