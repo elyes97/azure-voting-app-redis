@@ -65,6 +65,8 @@ pipeline {
                    sh'ls /var/lib/jenkins/workspace/test-azure-vote-pipeline'
                    sh'cat /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
                   sh'kubectl get all'
+                  sh'kubectl set image deployment azure-vote-front azure-vote-front=elyes97/rfc:TestV$BUILD_NUMBER'
+
                   sh'kubectl apply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml --validate=false'
                   sh'kubectl get all'
                   
