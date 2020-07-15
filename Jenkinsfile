@@ -52,7 +52,7 @@ pipeline {
                    sh'ls /var/lib/jenkins/workspace/test-azure-vote-pipeline'
                    sh'cat /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
                   sh'kubectl get all'
-                  sh'kubectl aply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
+                  sh'kubectl apply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
                   sh'kubectl get all'
                   
                   
