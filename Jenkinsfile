@@ -4,10 +4,9 @@ pipeline {
     registry = "elyes97/rfc"
     registryCredential = 'dockerhub'
     dockerImage = ''
+        IMAGE_TAG = dockerImage
   }
-    node('master') {
-    env.IMAGE_TAG = dockerImage
-    }
+
     
     agent any
 
