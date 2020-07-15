@@ -45,13 +45,16 @@ pipeline {
         {
             steps 
               {
-              // sh 'az login '
-              // sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
+               sh 'az login '
+               sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
                   sh'echo TestV$BUILD_NUMBER'
                   sh ' pwd '
                    sh'ls /var/lib/jenkins/workspace/test-azure-vote-pipeline'
                    sh'cat /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
                   sh'kubectl get all'
+                  sh'kubectl aply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
+                  sh'kubectl get all'
+                  '
                   
                   
                 
