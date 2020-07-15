@@ -36,8 +36,9 @@ pipeline {
         }
       }
         
-      /*        stage('Pushing  image') 
+             stage('Pushing  image') echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
         {
+             echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
             steps{
                  script {
                     docker.withRegistry( '', registryCredential ) 
@@ -47,7 +48,7 @@ pipeline {
   
                  }
        }
-      }*/
+      }
       
   /*    stage('Chek env') 
         {
