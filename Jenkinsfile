@@ -47,7 +47,7 @@ pipeline {
               {
                   script
                   {
-                      def imagetag = "registry + ":TestV$BUILD_NUMBER"
+                      def imagetag = "registry + :TestV$BUILD_NUMBER"
                sh 'az login '
                sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
                   sh'echo TestV$BUILD_NUMBER'
