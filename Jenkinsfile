@@ -5,8 +5,9 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
+    node('master') {
     env.IMAGE_TAG = dockerImage
-    
+    }
     
     agent any
 
