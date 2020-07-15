@@ -11,7 +11,7 @@ pipeline {
 
     stages {
    
-   /*    stage('Cloning Git') 
+       stage('Cloning Git') 
          {
            steps {
                  git 'https://github.com/elyes97/azure-voting-app-redis.git'
@@ -39,7 +39,7 @@ pipeline {
   
                  }
        }
-      }*/
+      }
       
       stage('Chek env') 
         {
@@ -47,10 +47,13 @@ pipeline {
               {
               // sh 'az login '
               // sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
+                  sh'echo dockerImage'
                   sh ' pwd '
                    sh'ls /var/lib/jenkins/workspace/test-azure-vote-pipeline'
                    sh'cat /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
                   sh'kubectl get all'
+                  sh'kubectl delete deploy/azure-vote-back deploy/azure-vote-front svc/azure-vote-back svc/azure-vote-front  '
+                  
                 
               }
         }
