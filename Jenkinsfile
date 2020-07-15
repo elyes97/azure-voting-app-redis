@@ -51,7 +51,7 @@ pipeline {
        }
       }
       
-  /*    stage('Chek env') 
+      stage('Chek env') 
         {
             steps 
               {
@@ -72,7 +72,7 @@ pipeline {
                   }
                 
               }
-        }*/
+        }
 
         }
 }
