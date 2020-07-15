@@ -47,7 +47,7 @@ pipeline {
               {
                sh 'az login '
                sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
-                  sh ' ls var/lib/jenkins/test-azure-vote-pipeline/ '
+                  sh ' pwd '
                 
               }
         }
