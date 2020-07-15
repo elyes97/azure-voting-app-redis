@@ -28,7 +28,7 @@ pipeline {
         }
       }
         
-              stage('Pushing  image') 
+  /*            stage('Pushing  image') 
         {
             steps{
                  script {
@@ -39,7 +39,7 @@ pipeline {
   
                  }
        }
-      }
+      }*/
       
       stage('Chek env') 
         {
@@ -47,7 +47,7 @@ pipeline {
               {
               // sh 'az login '
               // sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
-                  sh'echo $dockerImage'
+                  sh'echo TestV$BUILD_NUMBER'
                   sh ' pwd '
                    sh'ls /var/lib/jenkins/workspace/test-azure-vote-pipeline'
                    sh'cat /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml'
