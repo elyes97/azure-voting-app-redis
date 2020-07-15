@@ -38,8 +38,9 @@ pipeline {
         
              stage('Pushing  image') 
         {
-             echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
+             
             steps{
+                echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
                  script {
                     docker.withRegistry( '', registryCredential ) 
                      {
