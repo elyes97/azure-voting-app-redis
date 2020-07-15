@@ -11,7 +11,7 @@ pipeline {
 
     stages {
    
-       stage('Cloning Git') 
+   /*    stage('Cloning Git') 
          {
            steps {
                  git 'https://github.com/elyes97/azure-voting-app-redis.git'
@@ -39,14 +39,14 @@ pipeline {
   
                  }
        }
-      }
+      }*/
       
       stage('Chek env') 
         {
             steps 
               {
-               sh 'az login '
-               sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
+              // sh 'az login '
+              // sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
                   sh ' pwd '
                 
               }
