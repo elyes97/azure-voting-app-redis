@@ -30,7 +30,7 @@ pipeline {
         
               stage('Pushing  image') 
         {
-            steps{DYZN3XUZM
+            steps{
                  script {
                     docker.withRegistry( '', registryCredential ) 
                      {
