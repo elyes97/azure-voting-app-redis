@@ -25,7 +25,8 @@ pipeline {
                  script {
                     dockerImage = docker.build registry + ":TestV$BUILD_NUMBER"
                      IMAGE_TAG = "TestV$BUILD_NUMBER"
-                     
+                     env.TEST_VARIABLE = docker.build registry + ":TestV$BUILD_NUMBER"
+                      echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
                      
                    echo "FOO = ${env.IMAGE_TAG}"
                     /* env.TEST_VARIABLE = docker.build registry + ":TestV$BUILD_NUMBER"
