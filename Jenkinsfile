@@ -47,6 +47,7 @@ pipeline {
               {
                sh 'az login '
                sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
+                  sh ' cat  /azure-voting-app-redis/Jenkinsfile '
               }
         }
 
