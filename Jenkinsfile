@@ -106,6 +106,6 @@ pipeline {
                   containerRegistryCredentials: [[credentialsId: registryCredential, url: "https://hub.docker.com/"]]
             }
     }
-
-        }*/
+*/
+        }
 }
