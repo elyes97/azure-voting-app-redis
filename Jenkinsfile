@@ -15,6 +15,7 @@ pipeline {
     
         servicePrincipalId = 'ServicePrincipalIdCredential'
          resourceGroup = 'Elyes-Othmani-PFE01'
+        sshCredential = 'Ssh'
          aks = 'test-aks'
         
        IMAGE_TAG = "${imageName}"
@@ -101,6 +102,7 @@ pipeline {
                   containerService: "${aks} | AKS",
                   configFilePaths: '/var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml',
                   enableConfigSubstitution: true,
+                  sshCredentialsId:sshCredential,
                   containerRegistryCredentials: [[credentialsId: registryCredential, url: "https://hub.docker.com/"]]
             }
     }
