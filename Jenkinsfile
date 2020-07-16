@@ -45,8 +45,12 @@ pipeline {
                       echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
                      
                   echo "FOO = ${env.IMAGE_TAG}"
+                     sh ' pwd '
+                     sh 'cd /var/lib/jenkins/workspace/'
+                     sh'ls'
                     /* env.TEST_VARIABLE = docker.build registry + ":TestV$BUILD_NUMBER"
                       echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
+                      
 */
                  }
         }
