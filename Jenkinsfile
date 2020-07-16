@@ -17,7 +17,7 @@ pipeline {
          resourceGroup = 'Elyes-Othmani-PFE01'
          aks = 'test-aks'
         
-       IMAGE_TAG = "${registry}/${imageName}"
+       IMAGE_TAG = "${imageName}"
         
   }
    
