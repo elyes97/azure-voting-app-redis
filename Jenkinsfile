@@ -82,15 +82,26 @@ pipeline {
                   sh'kubectl get all'
                   
 
-                  sh'kubectl apply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml --validate=false'
-                      sh'kubectl set image deployment azure-vote-front azure-vote-front=elyes97/rfc:TestV$BUILD_NUMBER'
-                  sh'kubectl get all'
+             //     sh'kubectl apply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml --validate=false'
+               //       sh'kubectl set image deployment azure-vote-front azure-vote-front=elyes97/rfc:TestV$BUILD_NUMBER'
+                //  sh'kubectl get all'
                   
                   
                   }
                 
               }
         }
+        stage('Deploy') {
+        // Apply the deployments to AKS.
+        // With enableConfigSubstitution set to true, the variables ${TARGET_ROLE}, ${IMAGE_TAG}, ${KUBERNETES_SECRET_NAME}
+        // will be replaced with environment variable values
+        acsDeploy azureCredentialsId: servicePrincipalId,
+                  resourceGroupName: resourceGroup,
+                  containerService: "${aks} | AKS",
+                  configFilePaths: '/var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml',
+                  enableConfigSubstitution: true,
+                  containerRegistryCredentials: [[credentialsId: registryCredential, url: "https://hub.docker.com/"]]
+    }
 
         }
 }
