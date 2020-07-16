@@ -1,11 +1,19 @@
 pipeline {
     
+     def imageName = "elyes97/rfc:${env.BUILD_NUMBER}"
+     def servicePrincipalId = '<your-service-principal>'
+    def resourceGroup = 'Elyes-Othmani-PFE01'
+    def aks = 'test-aks'
+
+   
     environment {
     registry = "elyes97/rfc"
     registryCredential = 'dockerhub'
     dockerImage = ''
-        IMAGE_TAG = ''
+       IMAGE_TAG = "${registry}/${imageName}"
+        
   }
+   
 
     
     agent any
@@ -23,7 +31,7 @@ pipeline {
         {
             steps{
                  script {
-                    dockerImage = docker.build registry + ":TestV$BUILD_NUMBER"
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
                      IMAGE_TAG = "TestV$BUILD_NUMBER"
                      env.TEST_VARIABLE = docker.build registry + ":TestV$BUILD_NUMBER"
                       echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
