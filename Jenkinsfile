@@ -56,7 +56,7 @@ pipeline {
         }
       }
         
-     /*        stage('Pushing  image') 
+            stage('Pushing  image') 
         {
              
             steps{
@@ -104,12 +104,12 @@ pipeline {
         acsDeploy azureCredentialsId: servicePrincipalId,
                   resourceGroupName: resourceGroup,
                   containerService: "${aks} | AKS",
-                  configFilePaths: '/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml',
+                  configFilePaths: '/azure-vote-all-in-one-redis.yaml',
                   enableConfigSubstitution: true,
                   sshCredentialsId:sshCredential,
                   containerRegistryCredentials: [[credentialsId: registryCredential, url: "https://hub.docker.com/"]]
             }
     }
-*/
+
         }
 }
