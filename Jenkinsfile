@@ -52,7 +52,7 @@ pipeline {
         }
       }
         
-             stage('Pushing  image') 
+     /*        stage('Pushing  image') 
         {
              
             steps{
@@ -107,5 +107,5 @@ pipeline {
             }
     }
 
-        }
+        }*/
 }
