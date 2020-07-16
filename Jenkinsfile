@@ -92,6 +92,7 @@ pipeline {
               }
         }
         stage('Deploy') {
+            steps{
         // Apply the deployments to AKS.
         // With enableConfigSubstitution set to true, the variables ${TARGET_ROLE}, ${IMAGE_TAG}, ${KUBERNETES_SECRET_NAME}
         // will be replaced with environment variable values
@@ -101,6 +102,7 @@ pipeline {
                   configFilePaths: '/var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml',
                   enableConfigSubstitution: true,
                   containerRegistryCredentials: [[credentialsId: registryCredential, url: "https://hub.docker.com/"]]
+            }
     }
 
         }
