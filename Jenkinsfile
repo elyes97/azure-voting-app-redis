@@ -1,15 +1,22 @@
 pipeline {
     
-     def imageName = "elyes97/rfc:${env.BUILD_NUMBER}"
-     def servicePrincipalId = '<your-service-principal>'
+     //def imageName = "elyes97/rfc:${env.BUILD_NUMBER}"
+ /*    def servicePrincipalId = '<your-service-principal>'
     def resourceGroup = 'Elyes-Othmani-PFE01'
-    def aks = 'test-aks'
+    def aks = 'test-aks'*/
 
    
     environment {
     registry = "elyes97/rfc"
     registryCredential = 'dockerhub'
     dockerImage = ''
+        
+        imageName = "elyes97/rfc:${env.BUILD_NUMBER}"
+    
+        servicePrincipalId = 'ServicePrincipalIdCredential'
+         resourceGroup = 'Elyes-Othmani-PFE01'
+         aks = 'test-aks'
+        
        IMAGE_TAG = "${registry}/${imageName}"
         
   }
@@ -36,7 +43,7 @@ pipeline {
                      env.TEST_VARIABLE = docker.build registry + ":TestV$BUILD_NUMBER"
                       echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
                      
-                   echo "FOO = ${env.IMAGE_TAG}"
+                  echo "FOO = ${env.IMAGE_TAG}"
                     /* env.TEST_VARIABLE = docker.build registry + ":TestV$BUILD_NUMBER"
                       echo "TEST_VARIABLE = TestV$BUILD_NUMBER"
 */
