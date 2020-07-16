@@ -1,4 +1,5 @@
 pipeline {
+    import io.kubernetes.client.openapi.models.V1Deployment
     
      //def imageName = "elyes97/rfc:${env.BUILD_NUMBER}"
  /*    def servicePrincipalId = '<your-service-principal>'
