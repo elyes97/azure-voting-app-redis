@@ -104,7 +104,7 @@ pipeline {
         acsDeploy azureCredentialsId: servicePrincipalId,
                   resourceGroupName: resourceGroup,
                   containerService: "${aks} | AKS",
-                  configFilePaths: './workspace/azure-vote-all-in-one-redis.yaml',
+                  configFilePaths: '/var/lib/jenkins/workspace//azure-vote-all-in-one-redis.yaml',
                   enableConfigSubstitution: true,
                   sshCredentialsId:sshCredential,
                   containerRegistryCredentials: [[credentialsId: registryCredential, url: "https://hub.docker.com/"]]
