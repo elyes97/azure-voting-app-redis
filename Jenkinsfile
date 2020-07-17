@@ -81,7 +81,7 @@ pipeline {
                   {
                       withCredentials([azureServicePrincipal(servicePrincipalId)]) {
                       def imagetag = "registry + :TestV$BUILD_NUMBER"
-               sh 'az login '
+              sh'  az login --service-principal -u "\$AZURE_CLIENT_ID" -p "\$AZURE_CLIENT_SECRET" -t "\$AZURE_TENANT_ID"'
                sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
                   sh'echo $dockerImage'
                   sh ' pwd '
