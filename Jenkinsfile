@@ -79,6 +79,7 @@ pipeline {
               {
                   script
                   {
+                      withCredentials([azureServicePrincipal(servicePrincipalId)]) {
                       def imagetag = "registry + :TestV$BUILD_NUMBER"
                sh 'az login '
                sh ' az aks get-credentials --name test-aks --resource-group Elyes-Othmani-PFE01 '
@@ -92,7 +93,7 @@ pipeline {
              //     sh'kubectl apply -f /var/lib/jenkins/workspace/test-azure-vote-pipeline/azure-vote-all-in-one-redis.yaml --validate=false'
                //       sh'kubectl set image deployment azure-vote-front azure-vote-front=elyes97/rfc:TestV$BUILD_NUMBER'
                 //  sh'kubectl get all'
-                  
+                      }
                   
                   }
                 
